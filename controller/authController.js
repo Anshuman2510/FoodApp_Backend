@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-// const secrets = process.env || require("../secrets");
+
 const JWTSECRET = process.env.JWTSECRET || require("../secrets").JWTSECRET;
 const FooduserModel = require("../model/userModel");
 const mailSender = require("../utilities/mailSender")
@@ -111,6 +111,7 @@ async function resetPasswordController(req, res) {
         // key delete -> get the document obj -> modify that object by removing useless keys  
         // save to save this doc in db 
         console.log(user);
+
     } catch (err) {
         console.log(err);
         res.status(500).json({
@@ -182,6 +183,7 @@ function otpGenerator() {
 }
 // user update
 // delete
+
 module.exports = {
     signupController,
     loginController,
