@@ -4,9 +4,9 @@ const { getAllUsersController, profileController } =
     require('../controller/userController');
 const { protectRoute } = require("../controller/authController");
 // users -> get all the users from db -> sensitive route -> protected route -> logged in i will only allow that person 
-userRouter.get("/users", protectRoute, getAllUsersController);
+userRouter.get("/", protectRoute, getAllUsersController);
 // loggedin user
-userRouter.get("/user", protectRoute, profileController);
+userRouter.get("/profile", protectRoute, profileController);
 module.exports=userRouter
 
 

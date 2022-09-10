@@ -63,10 +63,9 @@
 * login , signup (backend frontend)->bugs -> status code addition
  * Profile Page -> ui -> backend -> ui link
  * Forget password and reset Password -> ui
-
 ## 21/aug/2022
  * Rectifying status code error ->axios  ✔
- * Adding Plans to your backend :(skeleteon code )
+ * Adding Plans to your backend :(skeleteon code)
   1. We are using mvc architecture 
      1. api level -> main sub-route with your router
      2. create a planRouter -> remaining route & associating controller fns
@@ -76,59 +75,29 @@
      4. create model -> db schema 
  * you first fill your model -> controller -> router
  * Usage : send data to a particular and following your schema  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- * Plans Schema : name,duration,price:discount
-  1. name: {
-        type: String,
-        required: [true, "kindly pass the name"],
-        unique: [true, "plan name should be unique"],
-        // errors
-        maxlength: [40, "Your plan length is more than 40 characters"],
-    },
-    duration: {
-        type: Number,
-        required: [true, "You Need to provide duration"]
-    },
-    price: {
-        type: Number,
-        required: true,
-    },
-    discount: {
-        type: Number,
-        validate: {
-            validator: function () {
-                return this.discount < this.price;
-            },
-            message: "Discount must be less than actual price",
-        },
-    }, 
+ * Plans Schema : name,duration,price:discount  
  * All Plans Page creation
- * Deployment + stripe integration / razorpay  
- * Bought plan  -> fall back route 
- * To be added later :  reviews-> later, averagerating
+ * deployment 
+
 # 22/aug/2022
+ * To be added later :
+  * TO add review feature
+    * create reviewModel :  
+      * desc,rating,createdAt,
+      * userId with ref  to userModel and planId with ref  to PlanModel
+    * update PlanModel with two new properties
+      * array of reviews : which review are done for your plan
+      * averageRating : 
+    * implementaiton: 
+      * create review 
+        * review send all the above entries 
+        * review's id is added to that plan for quick access
+        * average rating of that plan is also updated with
+           the help of current rating 
+      * get review 
+        * Find -> populate your planId and userId to get data about them
+
+
+* Deployment + stripe integration / razorpay  
+ * Bought plan  -> fall back route 
 * Presisting Login -> JWT and may i will be local storage

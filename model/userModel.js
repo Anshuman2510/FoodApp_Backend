@@ -5,7 +5,8 @@
 // connect to my app // mongoose 
 const mongoose = require('mongoose'); //npm i mongoose
 // db server link -> mongodb atlas ka link
-let DB_LINK =process.env.DB_LINK || require("../secrets").DB_LINK;
+//let DB_LINK =process.env.DB_LINK || require("../secrets").DB_LINK;
+let DB_LINK = process.env.DB_LINK || require("../secrets").DB_LINK;
     
 // db  server connect -> mongodbAtlas connect 
 mongoose

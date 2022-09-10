@@ -1,5 +1,4 @@
 const mongoose = require('mongoose'); //npm i mongoose
-
 let planSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -24,6 +23,13 @@ let planSchema = new mongoose.Schema({
             // error
             message: "Discount must be less than actual price",
         },
+    }
+    , reviews: {
+        type: [mongoose.Schema.ObjectId],
+        ref: "FoodreviewModel"
+    },
+    averageRating: {
+        type:Number
     }
     // reviews -> buy 
 })
